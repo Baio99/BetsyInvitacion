@@ -303,7 +303,7 @@ function FairyGodmotherSilhouette({ onEnded }) {
       {/* Video oculto — fuente de frames */}
       <video
         ref={videoRef}
-        src="/multimediaMovible/hadavideo.mp4"
+        src={`${import.meta.env.BASE_URL}multimediaMovible/hadavideo.mp4`}
         muted playsInline
         style={{ display: 'none' }}
       />

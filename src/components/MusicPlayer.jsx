@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const MUSIC_SRC = '/musica/so-this-is-love.mp3'
+const MUSIC_SRC = `${import.meta.env.BASE_URL}musica/so-this-is-love.mp3`
 const VOLUME    = 0.38   // 0.0 – 1.0  ←  ajusta aquí el volumen
 
 export default function MusicPlayer() {

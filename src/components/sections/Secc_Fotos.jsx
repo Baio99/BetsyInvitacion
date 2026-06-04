@@ -4,8 +4,8 @@ import { sectionVariants } from '../SectionWrapper'
 
 // ── Rutas de las fotos — pon los archivos en public/fotos/ ──
 const PHOTOS = [
-  { src: '/fotos/betsy1.png', caption: 'Nuestra pequeña princesa ✨' },
-  { src: '/fotos/betsy2.png', caption: '¡Feliz primer añito, Betsy! 🌟' },
+  { src: `${import.meta.env.BASE_URL}fotos/betsy1.png`, caption: 'Nuestra pequeña princesa ✨' },
+  { src: `${import.meta.env.BASE_URL}fotos/betsy2.png`, caption: '¡Feliz primer añito, Betsy! 🌟' },
 ]
 
 const AUTO_ADVANCE_MS = 4500
