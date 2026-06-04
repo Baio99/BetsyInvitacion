@@ -1,0 +1,99 @@
+/**
+ * index.css — Estilos globales de la invitación Betsa Quinceañera
+ * Paleta: Azul profundo #0d1b2a, Azul medio #415a77, Oro #e0a96d, Cian #7df9ff
+ * Fecha: 2026
+ */
+
+@import "tailwindcss";
+
+/* ── Tokens de diseño ──────────────────────────────────────────────────── */
+:root {
+  --bg-deep:      #0d1b2a;
+  --bg-mid:       #415a77;
+  --gold:         #e0a96d;
+  --gold-light:   #f5c87a;
+  --gold-dim:     #b8874a;
+  --cyan:         #7df9ff;
+  --cyan-dim:     #a8d8ea;
+  --cyan-deep:    #4fb3bf;
+  --text-base:    #e8e0d0;
+  --text-dim:     #9ca8b4;
+}
+
+/* ── Reset base ────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-deep);
+  color: var(--text-base);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+/* ── Utilidades mágicas globales ───────────────────────────────────────── */
+
+/* Borde dorado con degradado */
+.border-gold-gradient {
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+.border-gold-gradient::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--gold), transparent 40%, var(--cyan-dim) 70%, var(--gold));
+  z-index: -1;
+}
+
+/* Texto con brillo dorado */
+.text-gold-glow {
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(224, 169, 109, 0.8), 0 0 40px rgba(224, 169, 109, 0.4);
+}
+
+/* Texto con brillo cian */
+.text-cyan-glow {
+  color: var(--cyan);
+  text-shadow: 0 0 20px rgba(125, 249, 255, 0.9), 0 0 50px rgba(125, 249, 255, 0.5);
+}
+
+/* Keyframes globales */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow-gold {
+  0%, 100% { box-shadow: 0 0 20px rgba(224,169,109,0.3); }
+  50%       { box-shadow: 0 0 50px rgba(224,169,109,0.7), 0 0 100px rgba(224,169,109,0.2); }
+}
+
+@keyframes wand-sparkle {
+  0%        { transform: scale(1) rotate(0deg); opacity: 1; }
+  50%       { transform: scale(1.4) rotate(180deg); opacity: 0.7; }
+  100%      { transform: scale(1) rotate(360deg); opacity: 1; }
+}
+
+@keyframes star-burst {
+  0%   { transform: scale(0) rotate(0deg); opacity: 0; }
+  60%  { transform: scale(1.3) rotate(200deg); opacity: 1; }
+  100% { transform: scale(1) rotate(360deg); opacity: 0.8; }
+}
+
+.animate-float     { animation: float-gentle 3s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow-gold 2.5s ease-in-out infinite; }
+.animate-sparkle   { animation: wand-sparkle 2s linear infinite; }
